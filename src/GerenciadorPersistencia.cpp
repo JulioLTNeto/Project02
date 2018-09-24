@@ -119,12 +119,6 @@ list<Imovel*> GerenciadorPersistencia::recuperaListaImoveis(){
         imovel->setTipoOferta(tO);
         imovel->setValor(v);
 
-        cout<<imovel->getDescricao()<<endl;
-        cout<<imovel->getEndereco().getCidade()<<endl;
-        cout<<imovel->getTitulo()<<endl;
-        cout<<imovel->getValor()<<endl;
-        cout<<imovel->getTipoDeferta()<<endl;
-
         imoveis.push_back(imovel);
 
     }

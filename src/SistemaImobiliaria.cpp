@@ -164,8 +164,6 @@ std::string SistemaImobiliaria::maiuscula(string texto){
 }
 
 char SistemaImobiliaria::retirarCaracteres(char caracter){
-    printf("%c cod: %d ou %x\n", 'á', 'á', 'á');
-
 
     if(caracter == 233 || caracter == 'é' || caracter == 'è' || caracter == 'ê' || caracter == 'ẽ' || caracter == 'É' || caracter == 'È' || caracter == 'Ê' || caracter == 'Ẽ'){
             caracter = 'E';
@@ -182,7 +180,7 @@ char SistemaImobiliaria::retirarCaracteres(char caracter){
     if(caracter == 'ń' || caracter == 'ǹ' || caracter == 'ñ' || caracter == 'Ń' || caracter == 'Ǹ' || caracter == 'Ñ'){
             caracter = 'N';
     }
-    return caracter;
+     return caracter;
 }
 
 SistemaImobiliaria::~SistemaImobiliaria()

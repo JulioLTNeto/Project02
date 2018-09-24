@@ -17,7 +17,8 @@ int main()
     ende.setNumero(406);
     SistemaImobiliaria ut = SistemaImobiliaria();
     Apartamento a = Apartamento();
-    Imovel *apt = new Apartamento();
+    Imovel *apt = new Imovel();
+    Imovel *aux = apt;
 
     a.setEndereco(ende);
     a.setTitulo("Titulo");
@@ -32,6 +33,8 @@ int main()
     a.setDescricao();
 
     *apt = a;
+    delete(aux);
+
     cout << "Hello world!" << endl;
     list<Imovel*> l;
     cout<<ut.pesquisar("Papipapigrafo", "pigra")<<endl;
