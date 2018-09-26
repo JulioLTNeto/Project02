@@ -126,6 +126,54 @@ std::list<Imovel*> SistemaImobiliaria::getImoveis(){
     return lista;
 }
 
+std::list<Imovel*> SistemaImobiliaria::getImoveisPorMenorValorECidade(double valor, string cidade){
+    list<Imovel*> lis;
+
+    for(Imovel* imovel:lista){
+        if(imovel->getValor()<=valor && pesquisar(imovel->getEndereco().getCidade(), cidade)){
+            lis.push_back(imovel);
+        }
+    }
+
+    return lis;
+}
+
+std::list<Imovel*> SistemaImobiliaria::getImoveisPorMenorValor(double valor){
+    list<Imovel*> lis;
+
+    for(Imovel* imovel:lista){
+        if(imovel->getValor()<=valor){
+            lis.push_back(imovel);
+        }
+    }
+
+    return lis;
+}
+
+std::list<Imovel*> SistemaImobiliaria::getImoveisPorMaiorValor(double valor){
+    list<Imovel*> lis;
+
+    for(Imovel* imovel:lista){
+        if(imovel->getValor()>=valor){
+            lis.push_back(imovel);
+        }
+    }
+
+    return lis;
+}
+
+std::list<Imovel*> SistemaImobiliaria::getImoveisPorMaiorValorECidade(double valor, string cidade){
+    list<Imovel*> lis;
+
+    for(Imovel* imovel:lista){
+        if(imovel->getValor()>=valor && pesquisar(imovel->getEndereco().getCidade(), cidade)){
+            lis.push_back(imovel);
+        }
+    }
+
+    return lis;
+}
+
 bool SistemaImobiliaria::pesquisar(string palavra1, string palavra2){
     int tamanho1 = palavra1.length();
     int tamanho2 = palavra2.length();
@@ -165,7 +213,7 @@ std::string SistemaImobiliaria::maiuscula(string texto){
 
 char SistemaImobiliaria::retirarCaracteres(char caracter){
 
-    if(caracter == 233 || caracter == 'é' || caracter == 'è' || caracter == 'ê' || caracter == 'ẽ' || caracter == 'É' || caracter == 'È' || caracter == 'Ê' || caracter == 'Ẽ'){
+    if(caracter == 'é' || caracter == 'è' || caracter == 'ê' || caracter == 'ẽ' || caracter == 'É' || caracter == 'È' || caracter == 'Ê' || caracter == 'Ẽ'){
             caracter = 'E';
     }
     if(caracter == 'í' || caracter == 'ì' || caracter == 'î' || caracter == 'ĩ' || caracter == 'Í' || caracter == 'Ì' || caracter == 'Î' || caracter == 'Ĩ'){
